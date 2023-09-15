@@ -1,20 +1,21 @@
-import { MouseEvent } from "react"
+import { useState } from "react"
 
 const Main = () => {
 
-
+const [selectedItem, setSelectedItem] = useState(-1)
 const items = ["Home", "Menu", "Acsess", "Contact Us"]
-
-const handleClcik =(clickitem:MouseEvent)=>{
-    console.log(`${clickitem} cliked`)
-}
+const style = "bg-green-500 text-center p-4 rounded-lg text-white text-2xl"
+const style1 = "bg-red-500 text-center p-4 rounded-lg text-xl"
+// const handleClcik =(clickitem:MouseEvent)=>{
+//     console.log(`${clickitem} cliked`)
+// }
   return (
     <div>
-        <ul className="flex gap-4  flex-col  p-4">
-            {items.map((item) => (
+        <ul className="flex gap-8  flex-col  p-4">
+            {items.map((item,index) => (
                 //fix the key error
 
-                <li onClick={handleClcik} key={item} className="bg-red-500 text-center hover:bg-slate-500 hover:text-white">{item}</li>
+                <li onClick={()=>setSelectedItem(index)} key={item} className={selectedItem === index ? style :style1 }>{item}</li>
             ))} 
         </ul>
     </div>
