@@ -1,10 +1,11 @@
+import { MouseEvent } from "react"
+
 const Main = () => {
-//create list of items
-//create a component for each item
+
 
 const items = ["Home", "Menu", "Acsess", "Contact Us"]
 
-const handleClcik:React.MouseEventHandler<HTMLLIElement> =(clickitem)=>{
+const handleClcik =(clickitem:MouseEvent)=>{
     console.log(`${clickitem} cliked`)
 }
   return (
