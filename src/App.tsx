@@ -1,3 +1,4 @@
+import Alart from "./components/Alart"
 import Main from "./components/Main"
 import Selected from "./components/Selected"
 import { useState } from "react"
@@ -22,7 +23,11 @@ const App = () => {
     <p className="p-4 text-3xl bg-red-300 w-[40%] m-auto rounded-xl mt-4 text-center">
       {SelectedItemname === "" ? "No Item Selected" : SelectedItemname}
       </p>
-    <footer></footer>
+    <Alart>
+      
+      <span className="bg-green-500">hi</span>
+      <p>miradil</p>
+      </Alart>
     </>
   )
 }
