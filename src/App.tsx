@@ -1,4 +1,5 @@
 import Alart from "./components/Alart"
+import Button from "./components/Button"
 import Main from "./components/Main"
 import Selected from "./components/Selected"
 import { useState } from "react"
@@ -7,10 +8,14 @@ import { useState } from "react"
 const App = () => {
 
   const items = ["Home", "Menu", "Acsess", "Contact Us"]
+  const [open, setOpen] = useState(false)
   const [SelectedItemname, setSelectedItemname] = useState("")
 
   const handleSelectItem = (item: string) => {
     console.log(item)
+  }
+  const handleClick = () => {
+    setOpen(true)
   }
   return (
     <>
@@ -23,11 +28,12 @@ const App = () => {
     <p className="p-4 text-3xl bg-red-300 w-[40%] m-auto rounded-xl mt-4 text-center">
       {SelectedItemname === "" ? "No Item Selected" : SelectedItemname}
       </p>
-    <Alart>
+      <Alart open={open} >
       
-      <span className="bg-green-500">hi</span>
       <p>miradil</p>
+      <Button color="green" onClick={()=>setOpen(false)}>close</Button>
       </Alart>
+      <Button  onClick={handleClick} >My Button</Button>
     </>
   )
 }
